@@ -1,52 +1,210 @@
 .container{
-    padding: var(--main-padding);
-    height: 100vh;
+    margin: auto;
+    box-sizing: border-box;
     display: grid;
-    grid-gap: 0.5rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 4fr .2fr;
     grid-template-areas: 
-    "nav nav nav nav"
-    "sidebar main main main"
-    "sidebar content1 content2 content3"
-    "sidebar footer footer footer";
+            "nav"
+            "content"
+            "footer";
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
 }
 
-nav{
+nav {
     grid-area: nav;
+    position: sticky;
+    z-index: 1020;
+    top: 0;
+    align-self: start;
+    height: 50px;
 }
-footer{
-    grid-area: footer;
-}
-.sidebar{
-    grid-area: sidebar;
-}
-
-main{
-    grid-area: main;
-}
-
-#content1{
-    grid-area: content1;
-}
-#content2{
-    grid-area: content2;
-}
-#content3{
-    grid-area: content3;
+    
+.sidenav {
+    box-sizing: border-box;
+    grid-area: sidenav;
+    display: none;
+    position: sticky;
+    z-index: 1030;
+    top: 50px;
+    align-self: start;
+    height: calc(100vh - 50px);
 }
 
-@media only screen and (max-width: 550px) {
-    .container {
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
-      grid-template-areas:
-        "nav"
-        "sidebar"
-        "main"
-        "content1"
-        "content2"
-        "content3"
-        "footer";
+.content{
+    grid-area: content;
+    border-radius: var(--main-radius);
+    background: var(--content-1-background);
+    
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    .card{
+        width: 100%;
+        flex-grow: 1;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
     }
+    
+}
+
+footer {
+    box-sizing: border-box;
+    grid-area: footer;
+    padding-top: var(--main-padding);
+    height: 50px;
+}
+
+
+@media (min-width: 576px){
+    .container, .container-sm {
+        max-width: 540px;   
+    }
+    .col-121{
+        .card{
+            width: 50%;
+        }
+    }
+}
+@media (min-width: 768px){
+    .container, .container-md, .container-sm {
+        max-width: 720px;
+    }
+    .col-1111,  .col-121{
+        .card{
+            width: 50%;
+        }
+    }
+    .col-11, .col-21, .col-12, .col-31, .col-13{
+        .card{
+            width: 100%;
+        }
+    }
+    
+   
+}
+@media (min-width: 992px){
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px;
+    }
+    .col-11, .col-21, .col-12{
+        .card{
+            width: 50%;
+        }
+    }
+    .col-31{
+        .item-1{
+            width: 60%;
+        }
+        .item-2{
+            width: 40%;
+        }
+    }
+    .col-13{
+        .item-1{
+            width: 40%;
+        }
+        .item-2{
+            width: 60%;
+        }
+    }
+
+    
+}
+@media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+            
+        grid-template-columns: 200px 1fr 1fr;
+        grid-template-rows: 50px 1fr 50px;
+        grid-template-areas: 
+        "nav nav nav"
+        "sidenav  content content"
+        "sidenav  footer footer";
+        
+    }
+    .sidenav{
+        display: grid;
+    }
+    
+    .col-21{
+        .item-1{
+            width: 60%;
+        }
+        .item-2{
+            width: 40%;
+        }
+    }
+    .col-12{
+        .item-1{
+            width: 40%;
+        }
+        .item-2{
+            width: 60%;
+        }
+    }
+    .col-31{
+        .item-1{
+            width: 66%;
+        }
+        .item-2{
+            width: 33%;
+        }
+    }
+    .col-13{
+        .item-1{
+            width: 33%;
+        }
+        .item-2{
+            width: 66%;
+        }
+    }
+    
+}
+@media (min-width: 1540px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1480px;
+    }
+    .col-121{
+        .item-1{
+            order: 1;
+            width: 25%;
+        }
+        .item-2{
+            order: 3;
+            width: 25%;
+        }
+        .item-3{
+            order: 2;
+            width: 50%;
+        }  
+    }
+    .col-1111 .card{
+        width: 25%;
+    }
+    .col-31{
+        .item-1{
+            width: 60%;
+        }
+        .item-2{
+            width: 40%;
+        }
+    }
+    .col-13{
+        .item-1{
+            width: 40%;
+        }
+        .item-2{
+            width: 60%;
+        }
+    }   
 }

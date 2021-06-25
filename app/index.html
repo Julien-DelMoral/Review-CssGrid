@@ -3,7 +3,7 @@
 	<head>
 		<meta charset = "utf-8">
 		<meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1">
-		<title>Css Grid</title>
+		<title>Css Grid V2</title>
 		<meta name = "viewport" content = "width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap" rel="stylesheet">
 		<link rel = "stylesheet" href = "public/css/style.css">
@@ -13,11 +13,32 @@
 	<body>
 		<div class="container">
 			<nav>Navbar</nav>
-			<main>Main</main>
-			<div id="sidebar"  class="sidebar">Sidebar</div>
-			<div id="content1" class="content">Content1</div>
-			<div id="content2" class="content">Content2</div>
-			<div id="content3" class="content">Content3</div>
+			<div class="sidenav">Sidenav</div>
+			<div class="content">
+				<div class="row col-1111">
+					<div class="card">1</div>
+					<div class="card">2</div>
+					<div class="card">3</div>
+					<div class="card">4</div>
+				</div>
+				<div class="row col-11 h400">
+					<div class="card item-1">1</div>
+					<div class="card item-2">2</div>
+				</div>
+				<div class="row col-21">
+					<div class="card item-1">1</div>
+					<div class="card item-2">2</div>
+				</div>
+				<div class="row col-31 h400">
+					<div class="card item-1">1</div>
+					<div class="card item-2">2</div>
+				</div>
+				<div class="row col-121 h400">
+					<div class="card item-1">1</div>
+					<div class="card item-2">2</div>
+					<div class="card item-3">3</div>
+				</div>
+			</div>
 			<footer>Footer</footer>
 		</div>
 	</body>
