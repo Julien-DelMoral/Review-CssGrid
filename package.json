@@ -1,0 +1,17 @@
+{
+  "name": "css-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build-css": "node-sass -r app/scss -o app/public/css/",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "Julien Del Moral",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.7"
+  }
+}
